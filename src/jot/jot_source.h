@@ -31,7 +31,7 @@
 
 struct jot_Source;
 typedef struct jot_Source jot_Source;
-typedef const char* jot_SourceReader(struct jot_Source* source, size_t* bytes_read);
+typedef const char* jot_SourceReader(jot_Source* source, size_t* bytes_read);
 
 struct jot_Source
 {
