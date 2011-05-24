@@ -24,13 +24,13 @@
     THE SOFTWARE.
     
 */
-#ifndef JOT_CHUNK_H
-#define JOT_CHUNK_H
+#ifndef JOT_SOURCE_H
+#define JOT_SOURCE_H
 
-#include <stdio.h>
 #include <stddef.h>
 
 struct jot_Source;
+typedef struct jot_Source jot_Source;
 typedef const char* jot_SourceReader(struct jot_Source* source, size_t* bytes_read);
 
 struct jot_Source
@@ -39,8 +39,6 @@ struct jot_Source
     void* handle;
     jot_SourceReader* reader;
 };
-
-typedef struct jot_Source jot_Source;
 
 jot_Source* jot_FileSourceNew(const char* filename);
 void jot_FileSourceFree(jot_Source* self);

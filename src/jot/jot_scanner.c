@@ -275,7 +275,6 @@ jot_Token jot_ScannerNext(jot_Scanner* self)
     {
         while(self->position < self->buffer_size)
         {
-            printf("buffer: %d\n", self->buffer_size);
             if(self->end_of_file)
             {
                 c = JOT_END_OF_STREAM;
@@ -963,7 +962,7 @@ int main(int argc, char** argv)
     while(token = jot_ScannerNext(scanner), token != JOT_TOKEN_EOF)
     {
         printf("%d Token: %d %s", scanner->line, token, token_name[token]);
-        printf(" [%d %d]", scanner->text_capacity, scanner->last_text_capacity);
+        /* printf(" [%d %d]", scanner->text_capacity, scanner->last_text_capacity); */
         switch(token)
         {
             case JOT_TOKEN_INT:

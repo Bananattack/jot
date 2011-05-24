@@ -88,4 +88,3 @@ void jot_FileSourceFree(jot_Source* self)
     free(handle);
     free(self);
 }
-
